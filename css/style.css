@@ -1,0 +1,134 @@
+
+.leftpanel {
+  width:40%;
+  text-align: left;
+  margin-top: 0px;
+}
+.middlepanel {
+  width:100%;
+  margin-top:0px;
+  text-align: left;
+}
+.rightpanel {
+  width:60%;
+  margin-top: 0px;
+  text-align:left;
+}
+.bottompanel {
+
+}
+
+.map {
+  margin-top: 0px;
+  text-align:left;
+}
+.quest-steps{
+  height:210px;
+}
+.log {
+  height: 300px;
+  overflow-x: hidden;
+
+
+}
+.mainProgressBar{
+  heigth: 20 px;
+}
+.questStepProgressBar{
+  width: 0%;
+  height:20px;
+
+  transition: all 0.5s linear;
+
+}
+
+
+
+.action-list
+{
+  height:200px;
+}
+#actionList{
+  display: none;
+  min-width: 150px;
+  max-width: 150px;
+  height: 300px;
+  }
+
+
+#questCard{
+  display: none;
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+  }
+#battleCard{
+  display: none;
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+}
+
+#travelCard{
+  display: none;
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+}
+#questListCard{
+  min-width: 500px;
+  max-width: 500px;
+  height: 300px;
+}
+#travelListCard{
+  display: none;
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+}
+#weapon-sword, #weapon-dagger{
+  min-width: 300px;
+  max-width: 350px;
+  height: 300px;
+}
+
+#quest0, #quest1, #quest2, #quest3, #quest4, #declineQuest0, #declineQuest1, #declineQuest2, #declineQuest3, #declineQuest4 {
+  display: none;
+}
+
+.eventProgressBar{
+  width: 0%;
+  height:20px;
+  background-color: cyan;
+  transition: all 0.5s linear;
+  text-align: left;
+  border-radius: 25px;
+}
+.playerHPProgressBar{
+  width: 0%;
+  height:20px;
+  background-color: red;
+  transition: all 0.5s linear;
+  border-radius: 5px;
+}
+.mobHPProgressBar{
+  width: 0%;
+  height:20px;
+  background-color: red;
+  transition: all 0.5s linear;
+  text-align: left;
+  border-radius: 5px;
+}
+.mob
+{
+  width: 20%;
+}
+.currentQuestStep{
+  color: orange;
+}
+.completedQuestStep{
+  color: green;
+}
+.futureQuestStep{
+  color: grey;
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<title>My incremental Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="lib/css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+<script type="text/javascript" src="lib/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="lib/js/popper.min.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="JS/eventData.js"></script>
+<script type="text/javascript" src="JS/eventService.js"></script>
+<script type="text/javascript" src="JS/questData.js"></script>
+<script type="text/javascript" src="JS/questService.js"></script>
+<script type="text/javascript" src="JS/battleService.js"></script>
+<script type="text/javascript" src="JS/travelService.js"></script>
+<script type="text/javascript" src="JS/equipment.js"></script>
+<script type="text/javascript" src="JS/zones.js"></script>
+<script type="text/javascript" src="JS/ui.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
+
+<style>
+
+html,body,h1,h3,h3,h4,h5,h6 {font-family:"Lucida Console", Monaco, monospace}
+
+
+
+</style>
+<body>
+<!-- Page Container -->
+
+
+<div class="container-fluid">
+  <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#adventure">Adventure</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#character">Character</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#inventory">Inventory</a>
+      </li>
+    </ul>
+
+
+<!-- Tab panes -->
+
+      <div class="tab-content col-10">
+        <div id="adventure" class="container-fluid tab-pane active"><br>
+          <div class="row flex-nowrap">
+            <div class="col-12 pa-1">
+              <div class="row">
+<!-- BATTLE -->
+            <div id = "battleCard" class="card shadow col-2 m-1">
+
+                <div class="card-header">Battle</div>
+
+                <div class="m-2">
+                  <div class="">Character:</div>
+                  <div class="">
+                    <div class="playerHPProgressBar"></div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="m-2">
+                  <div class=""><span id="mobName"></span>:</div>
+                  <div class="">
+                    <div class="mobHPProgressBar"></div>
+                  </div>
+                </div>
+
+
+            </div>
+
+<!-- QUEST -->
+              <div id = "questCard" class="card shadow m-1 col-2 ">
+                <div class="card-header">Quest
+                  <div class="progress w-90">
+                    <div class="questStepProgressBar progress-bar  progress-bar-striped"></div>
+                  </div>
+                </div>
+
+                  <div class=" mainProgressBar ">
+                    <div class = "quest-steps"></div>
+                    <div class="eventProgressBar"></div>
+                  </div>
+              </div>
+
+
+<!-- TRAVEL -->
+              <div id="travelCard" class="card col-2 shadow m-1">
+                <div class="card-header">Travelling</div>
+                <div class="px-3 py-1">
+                  <div class="progress w-90">
+                    <div class="travelProgressBar progress-bar  progress-bar-striped"></div>
+                  </div>
+                </div>
+              </div>
+
+
+<!-- QUEST LIST -->
+              <div id="questListCard" class="card col-2 shadow m-1">
+                <div class="card-header">Available quests: (next in:<span id="questTimer"></span> sec)</div>
+                <div class="px-3 py-1">
+                  <div id="quest-list" class = "d-flex flex-column m-1">
+                    <span><span id = "quest0Name"></span><button id = "quest0" type="button" class="btn btn-outline-primary btn-sm">Accept</button><button id = "declineQuest0" type="button" class="btn btn-outline-primary btn-sm">X</button></span>
+                    <span><span id = "quest1Name"></span><button id = "quest1" type="button" class="btn btn-outline-primary btn-sm">Accept</button><button id = "declineQuest1" type="button" class="btn btn-outline-primary btn-sm">X</button></span>
+                    <span><span id = "quest2Name"></span><button id = "quest2" type="button" class="btn btn-outline-primary btn-sm">Accept</button><button id = "declineQuest2" type="button" class="btn btn-outline-primary btn-sm">X</button></span>
+                    <span><span id = "quest3Name"></span><button id = "quest3" type="button" class="btn btn-outline-primary btn-sm">Accept</button><button id = "declineQuest3" type="button" class="btn btn-outline-primary btn-sm">X</button></span>
+                    <span><span id = "quest4Name"></span><button id = "quest4" type="button" class="btn btn-outline-primary btn-sm">Accept</button><button id = "declineQuest4" type="button" class="btn btn-outline-primary btn-sm">X</button></span>
+                  </div>
+                </div>
+              </div>
+
+<!-- TRAVEL LIST -->
+              <div id="travelListCard" class="card col-2 shadow m-1">
+                <div class="card-header">Travel</div>
+                <div class="px-3 py-1">
+                  <div class = "d-flex flex-column m-1">
+                    <button id = "travelCamp" type="button" class="btn btn-outline-primary btn-sm">Camp</button>
+                    <button id = "travelForest" type="button" class="btn btn-outline-primary btn-sm">Forest</button>
+                    <button id = "travelSwamp" type="button" class="btn btn-outline-primary btn-sm">Swamp</button>
+                    <button id = "travelMine" type="button" class="btn btn-outline-primary btn-sm">Mine</button>
+                  </div>
+                </div>
+              </div>
+
+              </div>
+          </div>
+
+        </div>
+</div>
+
+
+
+
+
+
+        <div id="character" class="container-fluid tab-pane fade"><br>
+
+
+              <div>Class: <span id="character-Class"></span></div>
+              <div>Weapon: <span id="character-weapon"></span></div>
+              <div>Armor: <span id="character-armor"></span></div>
+              <div>Experience: <span id="character-experience"></span></div>
+              <div>Level: <span id="character-Level"></span></div>
+              <div>Gold: <span id="gold"></span></div>
+
+
+            <div>
+              <span class="dropdown">
+               <button type="button" class="btn m-1 btn-primary dropdown-toggle" data-toggle="dropdown">Select class</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" id="change-class-novice">Novice</a>
+                 <a class="dropdown-item" id="change-class-fighter">Fighter</a>
+                 <a class="dropdown-item" id="change-class-thief">Thief</a>
+                 <a class="dropdown-item" id="change-class-mystic">Mystic</a>
+               </div>
+             </span>
+
+
+              <span class="dropdown">
+               <button type="button" class="btn m-1 btn-primary dropdown-toggle" data-toggle="dropdown">Select armor</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" id="change-armor-LeatherArmor">Leather armor</a>
+                 <a class="dropdown-item" id="change-armor-ChainMail">Chain mail</a>
+                 <a class="dropdown-item" id="change-armor-Robe">Robe</a>
+               </div>
+             </span>
+          </div>
+        </div>
+
+<!-- INVENTORY -->
+          <div id="inventory" class="container-fluid tab-pane fade"><br>
+            <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#weapon-inventory">Weapon</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#armor-inventory">Armor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#other-inventory">Other</a>
+                </li>
+              </ul>
+
+                <div id="weapon-inventory" class="container-fluid tab-pane active"><br>
+                  <div class="row flex-nowrap">
+                    <div class="col-12 pa-1">
+                      <div class="row">
+
+                        <div id="weapon-sword" class="card col-2 shadow m-1">
+                          <div class="card-header">Sword  <span><button id = "change-weapon-sword" type="button" class="btn btn-outline-primary btn-sm">Equip</button></span></div>
+                          <div class="px-3 py-1">
+                            <div class = "d-flex flex-column m-1">
+                              <span>Damage: 1 </span>
+                              <span><span>Quality: Common  </span><button id = "" type="button" class="btn btn-outline-primary btn-sm">+</button></span>
+                              <span><span>Enchancment: +1  </span><button id = "" type="button" class="btn btn-outline-primary btn-sm">+</button></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="weapon-dagger" class="card col-2 shadow m-1">
+                          <div class="card-header">Dagger  <span><button id = "change-weapon-dagger" type="button" class="btn btn-outline-primary btn-sm">Equip</button></span></div>
+                          <div class="px-3 py-1">
+                            <div class = "d-flex flex-column m-1">
+                              <span>Damage: 1 </span>
+                              <span><span>Quality: Common  </span><button id = "" type="button" class="btn btn-outline-primary btn-sm">+</button></span>
+                              <span><span>Enchancment: +2  </span><button id = "" type="button" class="btn btn-outline-primary btn-sm">+</button></span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+          </div>
+
+
+      </div>
+
+
+
+
+
+<div class="log card mr-auto order-9 p-2 mt-5 border col-12"></div>
+</div>
+
+</body>
+</html>
